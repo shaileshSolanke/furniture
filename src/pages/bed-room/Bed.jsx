@@ -6,7 +6,7 @@ import { RoomsNavigation } from "../../components/RoomsNavigation";
 
 export const Bed = () => {
   return (
-    <div className="w-full h-screen bg-bed-day dark:bg-bed-night bg-cover bg-no-repeat bg-bottom saturate-200">
+    <div className="w-full h-screen bg-black bg-bed-day dark:bg-bed-night bg-cover bg-no-repeat bg-bottom saturate-200">
       <Navbar />
       <Tagline tagline={"Where Every Night Feels Luxurious."}/>
       <ThemeSwitcher />

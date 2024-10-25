@@ -6,7 +6,7 @@ import { RoomsNavigation } from "../../components/RoomsNavigation";
 
 export const WorkPlace = () => {
   return (
-    <div className="w-full h-screen bg-workplace-day dark:bg-workplace-night bg-cover bg-no-repeat bg-bottom saturate-200">
+    <div className="w-full h-screen bg-black bg-workplace-day dark:bg-workplace-night bg-cover bg-no-repeat bg-bottom saturate-200">
       <Navbar />
       <Tagline tagline={"Inspiring Productivity and Creativity."}/>
       <ThemeSwitcher />
