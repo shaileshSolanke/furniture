@@ -8,7 +8,7 @@ export const Tagline = ({ tagline, showProducts, setShowProducts }) => {
           {tagline}
         </h1>
         <button
-          className="shadow-glass bg-black/25 hover:bg-white border-white border-2 text-white hover:text-black font-bold p-4 text-2xl rounded-2xl mt-4 transition-all duration-300"
+          className="shadow-glass bg-black/25 hover:bg-white border-white border-2 text-white hover:text-black font-bold p-4 text-2xl lg:text-3xl rounded-2xl mt-4 transition-all duration-300"
           onClick={() => setShowProducts(true)}
         >
           Explore

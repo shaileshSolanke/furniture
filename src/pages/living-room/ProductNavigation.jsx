@@ -3,68 +3,69 @@ import { ProductNavigationLink } from "../../components/ProductNavigationLink";
 
 const productNavigationData = [
   {
-    top: 60,
-    left: 18,
+    top: 50,
+    left: 15,
     collection: "Sofas",
   },
   {
-    top: 75,
-    left: 70,
-    collection: "Armchair",
+    top: 65,
+    left:65,
+    collection: "Armchairs",
   },
   {
-    top: 75,
-    left: 13,
+    top: 65,
+    left: 10,
     collection: "Blankets & throws",
   },
   {
-    top: 80,
-    left: 28,
+    top: 70,
+    left: 25,
     collection: "Carpets",
   },
   {
-    top: 70,
-    left: 45,
+    top: 65,
+    left: 40,
     collection: "Tables",
   },
   {
-    top: 50,
-    left: 2,
+    top: 45,
+    left: -4,
     collection: "Pots & plants",
   },
   {
-    top: 53,
-    left: 40,
+    top: 45,
+    left: 35,
     collection: "Lamps",
   },
   {
-    top: 25,
-    left: 8,
+    top: 20,
+    left: 5,
     collection: "Frames & pictures",
   },
   {
-    top: 58,
-    left: 76,
-    collection: "Vases & bowls",
+    top: 47,
+    left: 72,
+    collection: "Decorative accessories",
   },
   {
-    top: 20,
-    left: 30,
+    top: 25,
+    left: 25,
     collection: "Curtains",
   },
   {
-    top: 15,
-    left: 45,
+    top: 8,
+    left: 40,
     collection: "Ceiling lights",
   },
 ];
 
-export const ProductNavigation = () => {
+export const ProductNavigation = ({room}) => {
   return (
     <>
       {productNavigationData.map((link, index) => (
         <ProductNavigationLink
           key={index}
+          room={room}
           top={link.top}
           left={link.left}
           collection={link.collection}
