@@ -7,7 +7,7 @@ export const ProductNavigationLink = ({ room, top, left, collection }) => {
   const navigate = useNavigate();
 
   function handleNavigate() {
-    navigate(`/products?room=${room}`);
+    navigate(`/products?room=${room}&collection=${collection}`);
   }
   return (
     <div

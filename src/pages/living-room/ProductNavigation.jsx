@@ -10,7 +10,7 @@ const productNavigationData = [
   {
     top: 65,
     left:65,
-    collection: "Armchairs",
+    collection: "Chairs",
   },
   {
     top: 65,
