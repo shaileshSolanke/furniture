@@ -5,6 +5,9 @@ import { ProductList } from "../../components/ProductList";
 import { Product } from "../../components/Product";
 import { Warranty } from "../../components/Warranty";
 import { ProductDetails } from "../../components/ProductDetails";
+import { CheckDeliveryAvailability } from "../../components/checkDeliveryAvailability";
+import { CheckStoreStock } from "../../components/checkStoreStock";
+import { BarLoader } from "react-spinners";
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
@@ -45,6 +48,28 @@ export const Products = () => {
     fetchProducts();
   }, []);
 
+  if (loading) {
+    return (
+      <div
+        className={`w-full h-screen bg-black bg-${room}-day dark:bg-${room}-night bg-cover bg-no-repeat bg-bottom flex items-center justify-center saturate-150`}
+      >
+        <div className="p-8 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md rounded-2xl">
+          <BarLoader />
+        </div>
+      </div>
+    );
+  }
+
+  if (errorMsg !== null) {
+    return (
+      <div className="w-full h-screen bg-black flex items-center justify-center">
+        <p className="text-white text-xl">
+          Something went wrong &#40; {errorMsg} &#41;
+        </p>
+      </div>
+    );
+  }
+
   return (
     <div
       className={`w-full h-screen relative bg-black bg-${room}-day dark:bg-${room}-night bg-cover bg-no-repeat bg-bottom flex items-center justify-center saturate-150`}
@@ -65,21 +90,27 @@ export const Products = () => {
             {products[itemIndex] ? (
               <Product product={products[itemIndex]} />
             ) : (
-              <div>No product selected</div>
+              <div className="h-full flex items-center justify-center">
+                No product selected
+              </div>
             )}
           </div>
           <div className="col-span-3 grid grid-rows-12 gap-4">
             <div className="row-span-5 grid grid-cols-2 gap-4">
-              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl"></div>
-              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl"></div>
+              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl flex items-center justify-center">
+                <CheckDeliveryAvailability />
+              </div>
+              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl flex items-center justify-center">
+                <CheckStoreStock />
+              </div>
             </div>
             <div className="row-span-2 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white font-bold p-4 rounded-2xl flex items-center justify-center">
               {products[itemIndex] ? (
                 <Warranty product={products[itemIndex]} />
               ) : (
-                <p className="">
+                <p className="font-medium">
                   No warranty provided{" "}
-                  <Link to="" className="underline text-blue-500">
+                  <Link to="/" className="underline text-blue-500">
                     read more
                   </Link>
                 </p>
@@ -89,9 +120,9 @@ export const Products = () => {
               {products[itemIndex] ? (
                 <ProductDetails product={products[itemIndex]} />
               ) : (
-                <div className="flex items-center justify-center h-full">
+                <p className="flex items-center justify-center h-full font-medium">
                   No more information
-                </div>
+                </p>
               )}
             </div>
           </div>
