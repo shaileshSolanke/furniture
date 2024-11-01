@@ -6,6 +6,7 @@ import { Bed } from "./pages/bed-room/Bed";
 import { Kitchen } from "./pages/kitchen-room/Kitchen";
 import { PageTransition } from "./components/PageTransition";
 import { Products } from "./pages/products/Products";
+import { Bag } from "./pages/bag/Bag";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/bed" element={<Bed />} />
         <Route path="/kitchen" element={<Kitchen />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/bag" element={<Bag />} />
       </Routes>
     </>
   );

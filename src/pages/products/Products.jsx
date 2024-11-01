@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { CartCount } from "../../components/CartCount";
+import { BagCount } from "../../components/BagCount";
 import { ProductList } from "../../components/ProductList";
 import { Product } from "../../components/Product";
 import { Warranty } from "../../components/Warranty";
@@ -8,6 +8,7 @@ import { ProductDetails } from "../../components/ProductDetails";
 import { CheckDeliveryAvailability } from "../../components/checkDeliveryAvailability";
 import { CheckStoreStock } from "../../components/checkStoreStock";
 import { BarLoader } from "react-spinners";
+import { Rooms } from "../../components/Rooms";
 
 export const Products = () => {
   const [products, setProducts] = useState([]);
@@ -75,16 +76,21 @@ export const Products = () => {
       className={`w-full h-screen relative bg-black bg-${room}-day dark:bg-${room}-night bg-cover bg-no-repeat bg-bottom flex items-center justify-center saturate-150`}
     >
       <div className="w-11/12 h-5/6 grid grid-rows-10 gap-4">
-        <div className="row-span-1 place-self-end">
-          <CartCount />
+        <div className="row-span-1 flex items-center justify-between">
+          <Rooms />
+          <BagCount />
         </div>
         <div className="row-span-11 grid grid-cols-12 gap-4">
           <div className="col-span-3 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white rounded-2xl overflow-hidden">
-            <ProductList
-              products={products}
-              itemIndex={itemIndex}
-              setItemIndex={setItemIndex}
-            />
+            {products.length ? (
+              <ProductList
+                products={products}
+                itemIndex={itemIndex}
+                setItemIndex={setItemIndex}
+              />
+            ) : (
+              <div className="h-full flex items-center justify-center">Nothing to select</div>
+            )}
           </div>
           <div className="col-span-6 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-8 rounded-2xl">
             {products[itemIndex] ? (
@@ -116,7 +122,7 @@ export const Products = () => {
                 </p>
               )}
             </div>
-            <div className="row-span-5 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white font-bold rounded-2xl h-full overflow-y-auto relative">
+            <div className="row-span-5 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white font-bold rounded-2xl h-full overflow-y-auto relative no-scrollbar">
               {products[itemIndex] ? (
                 <ProductDetails product={products[itemIndex]} />
               ) : (

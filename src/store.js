@@ -3,7 +3,7 @@ import productsReducer from "./redux/productsSlice";
 
 const store = configureStore({
   reducer: {
-    products: productsReducer,
+    bag: productsReducer,
   },
 });
 

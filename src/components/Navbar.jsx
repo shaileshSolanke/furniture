@@ -1,5 +1,5 @@
 import React from "react";
-import { CartCount } from "./CartCount";
+import { BagCount } from "./BagCount";
 
 export const Navbar = () => {
   return (
@@ -9,7 +9,7 @@ export const Navbar = () => {
         alt="logo"
         className="h-16 md:h-20 lg:h-24 drop-shadow"
       />
-      <CartCount />
+      <BagCount />
     </div>
   );
 };

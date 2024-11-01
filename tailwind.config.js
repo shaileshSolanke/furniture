@@ -21,6 +21,10 @@ export default {
           "url(https://shaileshsolanke.github.io/data/furniture/assets/background-images/bed-room-night.jpg)",
         "kitchen-night":
           "url(https://shaileshsolanke.github.io/data/furniture/assets/background-images/kitchen-room-night.jpg)",
+        "bag-bg-day":
+          "url(https://shaileshsolanke.github.io/data/furniture/assets/background-images/bag-bg-day.jpg)",
+        "bag-bg-night":
+          "url(https://shaileshsolanke.github.io/data/furniture/assets/background-images/bag-bg-night.jpg)",
       },
       colors: {
         glass: "rgba(255, 255, 255, 0.2)",
