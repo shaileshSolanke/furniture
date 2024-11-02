@@ -27,7 +27,7 @@ export const Bag = () => {
           </div>
           <div className="col-span-4">
             {bag.length ? (
-              <PaymentSummary bag={bag} />
+              <PaymentSummary bag={bag}/>
             ) : (
               <div className="h-full flex items-center justify-center bg-glass-dark shadow-glass backdrop-blur-md text-white rounded-2xl">
                 <p className="font-bold">

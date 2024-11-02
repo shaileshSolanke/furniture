@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { formatNumber } from "../utility/utility";
+import { Link } from "react-router-dom";
 
 export const PaymentSummary = ({ bag }) => {
   const [total, setTotal] = useState(0);
@@ -23,21 +24,20 @@ export const PaymentSummary = ({ bag }) => {
         </div>
         <div className="flex items-center justify-between">
           <p>Estimated tax &#40; 18&#37; &#41; &#58;</p>
-          <p className="font-bold">&#8377;{formatNumber(total * 0.18)}</p>
+          <p className="font-bold">Calculated in Checkout</p>
         </div>
         <div className="flex items-center justify-between text-3xl">
           <p>Total &#58;</p>
-          <p className="font-bold">&#8377;{formatNumber(total + total * 0.18)}</p>
+          <p className="font-bold">
+            &#8377;{formatNumber(total)}
+          </p>
         </div>
       </div>
-      <div className="row-span-2">
-        <button className="h-full w-full bg-white/75 hover:bg-white shadow-glass backdrop-blur-md text-3xl text-black rounded-2xl">
-          Go for payment{" "}
-          <span className="font-bold">
-            &#8377;{formatNumber(total + total * 0.18)}
-          </span>
+      <Link to="/checkout" className="row-span-2">
+        <button className="h-full w-full bg-white/75 hover:bg-white shadow-glass backdrop-blur-md text-3xl text-black rounded-2xl font-bold">
+          Proceed To Buy
         </button>
-      </div>
+      </Link>
     </div>
   );
 };

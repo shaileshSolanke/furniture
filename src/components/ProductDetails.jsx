@@ -5,7 +5,7 @@ export const ProductDetails = ({ product }) => {
   return (
     <div className="absolute p-4">
       <p>
-        Designer :{" "}
+        Designer &#58;{" "}
         <span className="font-medium">{details?.designer || "Unknown"}</span>
       </p>
       {details.description.map((eachLine, index) => (
@@ -14,7 +14,7 @@ export const ProductDetails = ({ product }) => {
         </p>
       ))}
       <p>
-        Country of origin :{" "}
+        Country of origin &#58;{" "}
         <span className="font-medium">{details?.countryOfOrigin || "NA"}</span>
       </p>
     </div>
