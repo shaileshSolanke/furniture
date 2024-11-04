@@ -2,8 +2,15 @@ import React from "react";
 import { FiPlusCircle } from "react-icons/fi";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { formatNumber } from "../utility/utility";
 
-export const ProductNavigationLink = ({ room, top, left, collection }) => {
+export const ProductNavigationLink = ({
+  room,
+  top,
+  left,
+  collection,
+  startingFrom,
+}) => {
   const navigate = useNavigate();
 
   function handleNavigate() {
@@ -19,7 +26,7 @@ export const ProductNavigationLink = ({ room, top, left, collection }) => {
         <div className="fixed bg-white font-semibold opacity-0 hover:opacity-100 transition-all duration-300 grid grid-cols-4 rounded-r-xl rounded-bl-xl w-max -translate-y-4 translate-x-6 overflow-hidden">
           <div className="col-span-3 flex flex-col p-2">
             <span>{collection}</span>
-            <span>Starting &#64;999</span>
+            <span>Starting &#64;{formatNumber(startingFrom) || 999}</span>
           </div>
           <div
             className="col-span-1 flex items-center justify-center p-2 hover:bg-black/10 cursor-pointer"

@@ -13,7 +13,7 @@ export const Bag = () => {
           <Rooms />
         </div>
         <div className="lg:row-span-9 lg:grid lg:grid-cols-10 lg:gap-4">
-          <div className="h-full lg:col-span-6 bg-glass-dark shadow-glass backdrop-blur-md text-white rounded-2xl p-2 lg:p-4 my-4 lg:my-0">
+          <div className="h-full lg:col-span-6 bg-glass-dark shadow-glass backdrop-blur-md text-white rounded-2xl p-2 lg:p-4 my-4 lg:my-0 overflow-y-scroll no-scrollbar">
             {bag.length ? (
               <ProductsSummary bag={bag} />
             ) : (

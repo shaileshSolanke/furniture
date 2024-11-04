@@ -15,6 +15,7 @@ export const Products = () => {
   const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState(null);
   const [itemIndex, setItemIndex] = useState(0);
+  const [varientIndex, setVarientIndex] = useState(0);
 
   function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -87,6 +88,7 @@ export const Products = () => {
                 products={products}
                 itemIndex={itemIndex}
                 setItemIndex={setItemIndex}
+                setVarientIndex={setVarientIndex}
               />
             ) : (
               <div className="h-full flex items-center justify-center">
@@ -96,7 +98,11 @@ export const Products = () => {
           </div>
           <div className="col-span-6 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 lg:p-8 rounded-2xl">
             {products[itemIndex] ? (
-              <Product product={products[itemIndex]} />
+              <Product
+                product={products[itemIndex]}
+                varientIndex={varientIndex}
+                setVarientIndex={setVarientIndex}
+              />
             ) : (
               <div className="h-full flex items-center justify-center p-4">
                 No product selected

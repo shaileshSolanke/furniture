@@ -15,7 +15,7 @@ export const ProductDetails = ({ product }) => {
       ))}
       <p>
         Country of origin &#58;{" "}
-        <span className="font-medium">{details?.countryOfOrigin || "NA"}</span>
+        <span className="font-medium">{details?.countryOfOrigin || "Unknown"}</span>
       </p>
     </div>
   );

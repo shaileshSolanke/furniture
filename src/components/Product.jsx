@@ -7,8 +7,7 @@ import { DotLoader } from "react-spinners";
 import { useDispatch, useSelector } from "react-redux";
 import { addToBag, removeFromBag } from "../redux/productsSlice";
 
-export const Product = ({ product }) => {
-  const [varientIndex, setVarientIndex] = useState(0);
+export const Product = ({ product, varientIndex, setVarientIndex }) => {
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
   const dispatch = useDispatch();
@@ -77,9 +76,11 @@ export const Product = ({ product }) => {
           <p className="text-5xl">
             &#8377;{formatNumber(product.varients[varientIndex].price)}
           </p>
-          <p className="line-through font-extralight">
-            &#8377;{formatNumber(product.varients[varientIndex].mrp)}
-          </p>
+          {product.varients[varientIndex].mrp && (
+            <p className="line-through font-extralight">
+              &#8377;{formatNumber(product.varients[varientIndex].mrp)}
+            </p>
+          )}
         </div>
       </div>
       <img

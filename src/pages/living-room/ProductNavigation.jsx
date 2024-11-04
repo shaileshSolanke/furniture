@@ -7,16 +7,19 @@ const productNavigationData = [
     top: 50,
     left: 15,
     collection: "Sofas",
+    startingFrom:20990
   },
   {
     top: 65,
     left: 65,
     collection: "Chairs",
+    startingFrom:8990
   },
   {
     top: 65,
     left: 10,
-    collection: "Blankets & throws",
+    collection: "Blanketsthrows",
+    startingFrom:599
   },
   {
     top: 70,
@@ -70,6 +73,7 @@ export const ProductNavigation = ({ room }) => {
           top={link.top}
           left={link.left}
           collection={link.collection}
+          startingFrom={startingFrom}
         />
       ))}
       <div className="lg:hidden absolute w-full h-full flex items-center justify-center">
@@ -80,6 +84,7 @@ export const ProductNavigation = ({ room }) => {
               index={index}
               room={room}
               collection={link.collection}
+              startingFrom={startingFrom}
             />
           ))}
         </div>

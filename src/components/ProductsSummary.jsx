@@ -11,7 +11,7 @@ export const ProductsSummary = ({ bag }) => {
   }
 
   return (
-    <div className="h-full flex flex-col gap-2 lg:gap-4 overflow-y-scroll no-scrollbar">
+    <div className="h-full flex flex-col gap-2 lg:gap-4">
       {bag.map((item, index) => (
         <div
           key={index}
