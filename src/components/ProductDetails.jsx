@@ -3,7 +3,7 @@ import React from "react";
 export const ProductDetails = ({ product }) => {
   const details = product.details;
   return (
-    <div className="absolute p-4">
+    <div className="lg:absolute p-4">
       <p>
         Designer &#58;{" "}
         <span className="font-medium">{details?.designer || "Unknown"}</span>

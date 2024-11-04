@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 
 export const CheckDeliveryAvailability = () => {
   return (
-    <div>
-      <TbTruckDelivery className="fill-white size-16 place-self-center" />
-      <p className="text-center text-2xl">Delivery</p>
-      <p className="text-center">Check delivery</p>
-      <p className="text-center">availability</p>
-      <Link to="/">
-        <FaArrowRightLong className="place-self-center h-full m-2"/>
-      </Link>
-    </div>
+    <Link to="/" className="flex items-center justify-between lg:block">
+      <TbTruckDelivery className="fill-white size-16 lg:place-self-center" />
+      <div>
+        <p className="text-center text-2xl hidden lg:block">Delivery</p>
+        <p className="text-center">Check delivery</p>
+        <p className="text-center">availability</p>
+      </div>
+      <FaArrowRightLong className="size-8 lg:place-self-center lg:h-full lg:m-2" />
+    </Link>
   );
 };

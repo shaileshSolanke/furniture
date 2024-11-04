@@ -23,7 +23,10 @@ const productSlice = createSlice({
     removeFromBag: (state, action) => {
       state.bag = state.bag.filter((item) => item[0].id !== action.payload.id);
     },
+    makeBagEmpty: (state) => {
+      state.bag = [];
+    },
   },
 });
-export const { addToBag, removeFromBag } = productSlice.actions;
+export const { addToBag, removeFromBag, makeBagEmpty } = productSlice.actions;
 export default productSlice.reducer;

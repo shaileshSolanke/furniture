@@ -56,7 +56,7 @@ export const Product = ({ product }) => {
 
   return (
     <div className="w-full h-full text-white flex flex-col justify-between">
-      <div className="flex items-center justify-between">
+      <div className="flex  justify-between flex-col lg:flex-row">
         <div>
           <p className="font-semibold text-2xl">{product.name}</p>
           <p>
@@ -73,7 +73,7 @@ export const Product = ({ product }) => {
             <span className="ml-2">{product.rating / 20}</span>
           </div>
         </div>
-        <div>
+        <div className="my-4 text-right lg:m-0">
           <p className="text-5xl">
             &#8377;{formatNumber(product.varients[varientIndex].price)}
           </p>
@@ -82,12 +82,29 @@ export const Product = ({ product }) => {
           </p>
         </div>
       </div>
-      <p className="w-2/5 text-justify relative">{product.description}</p>
-      <div className="w-3/4 flex relative z-20">
+      <img
+        src={`https://shaileshsolanke.github.io/data/${product.varients[varientIndex].src}`}
+        onLoad={handleImageLoad}
+        className={`lg:absolute lg:right-0 lg:bottom-0 lg:z-10 w-full lg:w-3/5 drop-shadow-tagline ${
+          loading ? "hidden" : "block"
+        }`}
+      />
+      {loading && (
+        <div className="lg:absolute lg:right-0 lg:bottom-0 lg:z-10 w-full lg:w-3/5 aspect-square flex items-center justify-center">
+          <DotLoader className="fill-white" />
+        </div>
+      )}
+      <ProductVarients
+        colors={product.varientsColor}
+        varientIndex={varientIndex}
+        setVarientIndex={setVarientIndex}
+      />
+      <p className="lg:w-2/5 text-justify my-4 ">{product.description}</p>
+      <div className="w-full lg:w-3/4 flex relative z-20">
         <div
           className={`${
             isInBag ? "hidden" : "visible"
-          } bg-white/80 text-black grid grid-cols-3 w-1/4 p-3 rounded-2xl mr-8`}
+          } bg-white/80 text-black grid grid-cols-3 w-1/2 lg:w-1/4 p-3 rounded-2xl mr-8`}
         >
           <button onClick={handleMinus}>
             <FiMinus className="place-self-center" />
@@ -100,38 +117,21 @@ export const Product = ({ product }) => {
           </button>
         </div>
         <button
-          className="bg-black/75 w-2/5 p-3 rounded-2xl"
+          className="bg-black/75 w-full lg:w-2/5 p-3 rounded-2xl font-bold"
           onClick={isInBag ? handleRemoveFromBag : handleAddToBag}
         >
           {isInBag ? "Remove from bag" : "Add to bag"}
         </button>
       </div>
-      <div className="flex">
+      <div className="flex mt-4 lg:mt-0 overflow-x-auto lg:overflow-x-visible">
         {product.varients[varientIndex].media.map((src, index) => (
           <img
             key={index}
             src={`https://shaileshsolanke.github.io/data/${src}`}
-            className="w-1/12 m-1 rounded-lg shadow-sm hover:scale-150 transition-all"
+            className="lg:w-1/12 mr-4 rounded-lg shadow-sm lg:hover:scale-150 transition-all"
           />
         ))}
       </div>
-      {loading && (
-        <div className="absolute right-0 bottom-0 z-10 w-3/5 aspect-square flex items-center justify-center">
-          <DotLoader />
-        </div>
-      )}
-      <img
-        src={`https://shaileshsolanke.github.io/data/${product.varients[varientIndex].src}`}
-        onLoad={handleImageLoad}
-        className={`absolute right-0 bottom-0 z-10 w-3/5 ${
-          loading ? "hidden" : "block"
-        }`}
-      />
-      <ProductVarients
-        colors={product.varientsColor}
-        varientIndex={varientIndex}
-        setVarientIndex={setVarientIndex}
-      />
     </div>
   );
 };

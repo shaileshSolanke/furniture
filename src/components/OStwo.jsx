@@ -30,10 +30,12 @@ export const OStwo = () => {
             &#8377;{formatNumber(total + total * 0.18)}
           </p>
         </div>
-        <Link className="text-white/50">Do you have a Coupen code &#63;</Link>
+        <Link to="/" className="text-white/50">
+          Do you have a Coupen code &#63;
+        </Link>
       </div>
       <div>
-        <div className="flex items-center justify-between text-3xl">
+        <div className="flex items-center justify-between text-3xl border-t pt-2 mt-2">
           <p>Order Total &#58;</p>
           <p className="font-bold">
             &#8377;{formatNumber(Math.round(total + total * 0.18))}

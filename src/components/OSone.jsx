@@ -6,10 +6,8 @@ export const OSone = () => {
   const [customer] = useSelector((state) => state.customer);
   const date = new Date();
   const today = date.toDateString();
-  console.log(customer);
-  console.log(bag);
   return (
-    <div className="absolute p-8">
+    <div className="lg:absolute p-4 lg:p-8">
       <p>
         Order Number &#58;{" "}
         <span className="font-bold">
@@ -31,12 +29,18 @@ export const OSone = () => {
         up to 24 hours for us to process your order for shipment.
       </p>
       <p className="font-bold my-2">Billing/Shipping Address</p>
-      <p>
+      <p className="font-light">
         {customer.firstName} {customer.lastName}
       </p>
-      <p>{customer.addressLineOne + " " + customer.addressLineTwo}</p>
-      <p>
+      <p className="font-light">
+        {customer.addressLineOne + " " + customer.addressLineTwo}
+      </p>
+      <p className="font-light">
         {customer.city}, {customer.state}, {customer.zip}
+      </p>
+      <p className="my-2">
+        Shipping Method &#58;{" "}
+        <span className="font-bold">5&#45;6 Business Days</span>
       </p>
     </div>
   );

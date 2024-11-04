@@ -73,15 +73,15 @@ export const Products = () => {
 
   return (
     <div
-      className={`w-full h-screen relative bg-black bg-${room}-day dark:bg-${room}-night bg-cover bg-no-repeat bg-bottom flex items-center justify-center saturate-150`}
+      className={`w-full h-screen relative bg-black bg-${room}-day dark:bg-${room}-night bg-cover bg-no-repeat bg-bottom lg:flex lg:items-center lg:justify-center saturate-150 p-4 no-scrollbar`}
     >
-      <div className="w-11/12 h-5/6 grid grid-rows-10 gap-4">
-        <div className="row-span-1 flex items-center justify-between">
+      <div className="w-full h-full flex flex-col lg:w-11/12 lg:h-5/6 lg:grid lg:grid-rows-10 lg:gap-4">
+        <div className="lg:row-span-1 flex items-center justify-between">
           <Rooms />
           <BagCount />
         </div>
-        <div className="row-span-11 grid grid-cols-12 gap-4">
-          <div className="col-span-3 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white rounded-2xl overflow-hidden">
+        <div className="lg:row-span-11 lg:grid lg:grid-cols-12 lg:gap-4">
+          <div className="my-4 lg:m-0 h-28 lg:h-full col-span-3 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white rounded-2xl overflow-hidden">
             {products.length ? (
               <ProductList
                 products={products}
@@ -89,34 +89,36 @@ export const Products = () => {
                 setItemIndex={setItemIndex}
               />
             ) : (
-              <div className="h-full flex items-center justify-center">Nothing to select</div>
+              <div className="h-full flex items-center justify-center">
+                Nothing to select
+              </div>
             )}
           </div>
-          <div className="col-span-6 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-8 rounded-2xl">
+          <div className="col-span-6 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 lg:p-8 rounded-2xl">
             {products[itemIndex] ? (
               <Product product={products[itemIndex]} />
             ) : (
-              <div className="h-full flex items-center justify-center">
+              <div className="h-full flex items-center justify-center p-4">
                 No product selected
               </div>
             )}
           </div>
-          <div className="col-span-3 grid grid-rows-12 gap-4">
-            <div className="row-span-5 grid grid-cols-2 gap-4">
-              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl flex items-center justify-center">
+          <div className="my-4 flex flex-col-reverse lg:my-0 lg:col-span-3 lg:grid lg:grid-rows-12 lg:gap-4">
+            <div className="lg:row-span-5 lg:grid lg:grid-cols-2 lg:gap-4">
+              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl lg:flex lg:items-center lg:justify-center mb-4 lg:mb-0">
                 <CheckDeliveryAvailability />
               </div>
-              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl flex items-center justify-center">
+              <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl lg:flex lg:items-center lg:justify-center">
                 <CheckStoreStock />
               </div>
             </div>
-            <div className="row-span-2 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white font-bold p-4 rounded-2xl flex items-center justify-center">
+            <div className="lg:row-span-2 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white font-bold p-4 rounded-2xl flex items-center justify-center my-4 lg:my-0">
               {products[itemIndex] ? (
                 <Warranty product={products[itemIndex]} />
               ) : (
-                <p className="font-medium">
+                <p className="font-medium p-4">
                   No warranty provided{" "}
-                  <Link to="/" className="underline text-blue-500">
+                  <Link to="/" className="underline text-blue-300">
                     read more
                   </Link>
                 </p>
@@ -126,7 +128,7 @@ export const Products = () => {
               {products[itemIndex] ? (
                 <ProductDetails product={products[itemIndex]} />
               ) : (
-                <p className="flex items-center justify-center h-full font-medium">
+                <p className="flex items-center justify-center h-full font-medium p-4">
                   No more information
                 </p>
               )}

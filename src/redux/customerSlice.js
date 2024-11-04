@@ -9,8 +9,11 @@ const customerSlice = createSlice({
     addCustomer: (state, action) => {
       state.push(action.payload);
     },
+    removeCustomer: (state) => {
+      state = [];
+    },
   },
 });
 
-export const { addCustomer } = customerSlice.actions;
+export const { addCustomer, removeCustomer } = customerSlice.actions;
 export default customerSlice.reducer;

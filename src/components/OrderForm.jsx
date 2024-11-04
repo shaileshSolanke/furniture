@@ -36,6 +36,10 @@ export const OrderForm = ({ setAddressCollected }) => {
           event.preventDefault();
           dispatch(addCustomer(details));
           setAddressCollected(true);
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
         }}
       >
         <div className="grid grid-cols-2 gap-4">
