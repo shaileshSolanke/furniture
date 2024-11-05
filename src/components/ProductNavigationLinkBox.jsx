@@ -1,11 +1,12 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { formatNumber } from "../utility/utility";
 
 export const ProductNavigationLinkBox = ({
   index,
   room,
   collection,
-  formatNumber,
+  startingFrom = 0,
 }) => {
   const navigate = useNavigate();
 
@@ -14,10 +15,17 @@ export const ProductNavigationLinkBox = ({
   }
   return (
     <button
-      className="hover:bg-glass-dark hover:dark:bg-glass p-2 rounded-2xl font-bold w-full text-left"
+      className="hover:bg-glass-dark p-4 rounded-2xl font-bold w-full text-left"
       onClick={handleNavigate}
     >
-      {index + 1} &#41; {collection}
+      <div className="flex items-center justify-between">
+        <span>
+          {index + 1} &#41; {collection}
+        </span>
+        <span className="hidden sm:block">
+          Starting &#8377;{formatNumber(startingFrom)}
+        </span>
+      </div>
     </button>
   );
 };

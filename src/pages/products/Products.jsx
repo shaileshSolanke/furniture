@@ -82,7 +82,7 @@ export const Products = () => {
           <BagCount />
         </div>
         <div className="lg:row-span-11 lg:grid lg:grid-cols-12 lg:gap-4">
-          <div className="my-4 lg:m-0 h-28 lg:h-full col-span-3 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white rounded-2xl overflow-hidden">
+          <div className="my-4 lg:m-0 h-28 lg:h-full lg:col-span-2 xl:col-span-3 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white rounded-2xl overflow-hidden">
             {products.length ? (
               <ProductList
                 products={products}
@@ -96,7 +96,7 @@ export const Products = () => {
               </div>
             )}
           </div>
-          <div className="col-span-6 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 lg:p-8 rounded-2xl">
+          <div className="lg:col-span-7 xl:col-span-6 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 lg:p-8 rounded-2xl">
             {products[itemIndex] ? (
               <Product
                 product={products[itemIndex]}
@@ -109,7 +109,7 @@ export const Products = () => {
               </div>
             )}
           </div>
-          <div className="my-4 flex flex-col-reverse lg:my-0 lg:col-span-3 lg:grid lg:grid-rows-12 lg:gap-4">
+          <div className="my-4 flex flex-col-reverse lg:my-0 lg:col-span-3 mg:grid lg:grid-rows-12 lg:gap-4">
             <div className="lg:row-span-5 lg:grid lg:grid-cols-2 lg:gap-4">
               <div className="bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-md text-white p-4 rounded-2xl lg:flex lg:items-center lg:justify-center mb-4 lg:mb-0">
                 <CheckDeliveryAvailability />

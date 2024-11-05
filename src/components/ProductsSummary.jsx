@@ -22,7 +22,7 @@ export const ProductsSummary = ({ bag }) => {
               src={`https://shaileshsolanke.github.io/data/${item[0].src}`}
               className="p-2 lg:p-4 h-full lg:absolute drop-shadow-tagline"
             />
-            <span className="hidden lg:block absolute right-0 bottom-0 m-4 px-4 py-2 bg-glass rounded-full">
+            <span className="hidden lg:block absolute right-0 bottom-0 m-4 px-4 py-2 bg-glass-dark rounded-full">
               &#120; {item[1]}
             </span>
           </div>
@@ -47,7 +47,7 @@ export const ProductsSummary = ({ bag }) => {
             </div>
             <div className="col-span-2 flex items-center justify-center">
               <button onClick={() => handleRemoveFromBag(item[0])}>
-                <FaTrashAlt className="fill-white size-8 lg:size-12 p-2 lg:p-3 bg-glass rounded-lg lg:rounded-2xl" />
+                <FaTrashAlt className="fill-white size-8 lg:size-12 p-2 lg:p-3 bg-white/10 rounded-lg lg:rounded-2xl" />
               </button>
             </div>
           </div>

@@ -27,8 +27,7 @@ export default {
           "url(https://shaileshsolanke.github.io/data/furniture/assets/background-images/bag-bg-night.jpg)",
       },
       colors: {
-        glass: "rgba(255, 255, 255, 0.2)",
-        "glass-dark": "rgba(0, 0, 0, 0.2)",
+        "glass-dark": "rgba(0, 0, 0, 0.5)",
       },
       boxShadow: {
         glass: "0 0 1px rgba(0, 0, 0)",

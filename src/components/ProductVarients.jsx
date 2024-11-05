@@ -2,7 +2,7 @@ import React from "react";
 
 export const ProductVarients = ({ colors, varientIndex, setVarientIndex }) => {
   return (
-    <div className="mt-4 place-self-end lg:place-self-start lg:absolute lg:z-20 lg:bottom-0 lg:right-0 lg:p-8">
+    <div className="mt-4 place-self-end sm:absolute sm:top-[30%] sm:right-[8%] sm:z-20 md:bottom-[0] md:right-[0] md:p-8">
       {colors.map((color, index) => (
         <button
           key={index}

@@ -24,7 +24,7 @@ export const PaymentSummary = ({ bag }) => {
         </div>
         <div className="flex items-center justify-between mb-2 lg:mb-0">
           <p className="text-sm lg:text-base">Estimated tax &#40; 18&#37; &#41; &#58;</p>
-          <p className="font-bold text-sm lg:text-base">Calculated in Checkout</p>
+          <p className="text-sm">Calculated in Checkout</p>
         </div>
         <div className="flex items-center justify-between text-3xl border-t pt-2">
           <p>Total &#58;</p>

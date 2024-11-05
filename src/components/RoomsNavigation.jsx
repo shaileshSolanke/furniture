@@ -26,9 +26,9 @@ function remainingRooms(room) {
 
 export const RoomsNavigation = ({ currentRoom }) => {
   return (
-    <ul className="fixed z-40 bottom-0 m-2 md:mx-8 md:my-6 lg:mx-12 lg:my-8 bg-glass-dark dark:bg-glass shadow-glass backdrop-blur-sm text-white font-bold p-2 rounded-2xl w-[180px]" draggable={true}>
+    <ul className="fixed z-40 bottom-0 m-2 md:mx-8 md:my-6 lg:mx-12 lg:my-8 bg-glass-dark shadow-glass backdrop-blur-sm text-white font-bold p-2 rounded-2xl w-[180px]" draggable={true}>
       {remainingRooms(currentRoom).map((room,index) => (
-        <Link key={index} to={room.href} className="hover:bg-glass dark:hover:bg-glass-dark transition flex items-center justify-between rounded-2xl">
+        <Link key={index} to={room.href} className="hover:bg-glass-dark transition flex items-center justify-between rounded-2xl">
           <li className="p-2 text-lg">
             {room.name}
           </li>

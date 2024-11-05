@@ -23,7 +23,7 @@ export const Checkout = () => {
             </div>
           </div>
           <div className="lg:row-span-9 lg:grid lg:grid-cols-10 lg:gap-4">
-            <div className="lg:h-full w-full lg:col-span-4 bg-glass-dark shadow-glass backdrop-blur-md text-white rounded-2xl my-4 lg:my-0">
+            <div className="lg:h-full w-full lg:col-span-2 xl:col-span-3 bg-glass-dark shadow-glass backdrop-blur-md text-white rounded-2xl my-4 lg:my-0">
               {addressCollected ? (
                 <div className="lg:absolute h-full w-full rounded-2xl flex items-center justify-center">
                   <div className="w-48 p-4 size-24 lg:size-48">
@@ -39,7 +39,7 @@ export const Checkout = () => {
                 </div>
               )}
             </div>
-            <div className="lg:col-span-6">
+            <div className="lg:col-span-8 xl:col-span-7">
               {addressCollected ? (
                 <OrderSummary />
               ) : (

@@ -54,10 +54,10 @@ export const Product = ({ product, varientIndex, setVarientIndex }) => {
   }, [varientIndex]);
 
   return (
-    <div className="w-full h-full text-white flex flex-col justify-between">
-      <div className="flex  justify-between flex-col lg:flex-row">
+    <div className="w-full h-full text-white flex flex-col justify-between md:h-[60vh] lg:h-full">
+      <div className="flex justify-between flex-col sm:flex-row">
         <div>
-          <p className="font-semibold text-2xl">{product.name}</p>
+          <p className="font-semibold text-2xl sm:text-4xl">{product.name}</p>
           <p>
             {product.subCollection}, {product.varients[varientIndex].name}
           </p>
@@ -86,13 +86,13 @@ export const Product = ({ product, varientIndex, setVarientIndex }) => {
       <img
         src={`https://shaileshsolanke.github.io/data/${product.varients[varientIndex].src}`}
         onLoad={handleImageLoad}
-        className={`lg:absolute lg:right-0 lg:bottom-0 lg:z-10 w-full lg:w-3/5 drop-shadow-tagline ${
+        className={`md:absolute md:right-0 md:bottom-0 lg:z-10 w-full sm:w-3/5 md:w-2/4 lg:w-3/5 drop-shadow-tagline ${
           loading ? "hidden" : "block"
         }`}
       />
       {loading && (
         <div className="lg:absolute lg:right-0 lg:bottom-0 lg:z-10 w-full lg:w-3/5 aspect-square flex items-center justify-center">
-          <DotLoader className="fill-white" />
+          <DotLoader color="white"/>
         </div>
       )}
       <ProductVarients
@@ -100,8 +100,8 @@ export const Product = ({ product, varientIndex, setVarientIndex }) => {
         varientIndex={varientIndex}
         setVarientIndex={setVarientIndex}
       />
-      <p className="lg:w-2/5 text-justify my-4 ">{product.description}</p>
-      <div className="w-full lg:w-3/4 flex relative z-20">
+      <p className="w-full md:w-2/5 text-justify my-4 sm:text-lg">{product.description}</p>
+      <div className="w-full md:w-3/4 flex relative z-20">
         <div
           className={`${
             isInBag ? "hidden" : "visible"
@@ -124,12 +124,12 @@ export const Product = ({ product, varientIndex, setVarientIndex }) => {
           {isInBag ? "Remove from bag" : "Add to bag"}
         </button>
       </div>
-      <div className="flex mt-4 lg:mt-0 overflow-x-auto lg:overflow-x-visible">
+      <div className="flex mt-4 md:mt-0 overflow-x-auto md:overflow-x-visible">
         {product.varients[varientIndex].media.map((src, index) => (
           <img
             key={index}
             src={`https://shaileshsolanke.github.io/data/${src}`}
-            className="lg:w-1/12 mr-4 rounded-lg shadow-sm lg:hover:scale-150 transition-all"
+            className="md:w-1/12 mr-4 rounded-lg shadow-sm md:hover:scale-150 transition-all"
           />
         ))}
       </div>

@@ -8,7 +8,7 @@ export const CheckDeliveryAvailability = () => {
     <Link to="/" className="flex items-center justify-between lg:block">
       <TbTruckDelivery className="fill-white size-16 lg:place-self-center" />
       <div>
-        <p className="text-center text-2xl hidden lg:block">Delivery</p>
+        <p className="text-center text-2xl hidden sm:block">Delivery</p>
         <p className="text-center">Check delivery</p>
         <p className="text-center">availability</p>
       </div>
