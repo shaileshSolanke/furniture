@@ -3,6 +3,14 @@
 ## Overview
 This project is a React-based e-commerce web application that features an interactive and dynamic shopping experience. Users can explore different themed rooms (Living Room, Bedroom, Kitchen, and Workplace), browse products that match the room's background, and proceed through the shopping and checkout process with a smooth UI. The project includes a day/night mode, a mock checkout experience, and showcases product variants.
 
+## Project Previews
+
+### Mobile View
+![Mobile View](./screenshots/mobile-view.gif)
+
+### Desktop View
+![Desktop View](./screenshots/desktop-view.gif)
+
 ## Features
 - **Room Pages**: Four room-themed pages (Living Room, Bedroom, Kitchen, Workplace), each with a unique background and matching products.
 - **Day/Night Toggle**: Switches the room background to reflect day or night mode.
